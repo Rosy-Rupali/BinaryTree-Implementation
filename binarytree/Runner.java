@@ -15,7 +15,12 @@ public class Runner {
 		BST.add(10);
 		BST.printNodes();
 		System.out.println("Size of the tree is: "+BST.getSize());
-
+		MyBinaryNode<Integer> searchResult = BST.search(6);
+		if(searchResult == null) {
+			System.out.println("Node is not present binary tree");
+		}else {
+			System.out.println("Node is present in binary tree: "+searchResult.getKey());
+		}
 	}
 
 }

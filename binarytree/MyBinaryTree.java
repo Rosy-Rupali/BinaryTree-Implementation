@@ -1,7 +1,7 @@
 /**************************************************
  * Purpose : Binary search tree implementation
  * @author Rosy Rupali
- * @since 15-06-2021
+ * @since 14-06-2021
  * @version 1.0
  *
  *************************************************/
@@ -61,6 +61,32 @@ public class MyBinaryTree<K extends Comparable<K>> {
 			current.right = addRecursively(current.right, key);
 		}
 		return current;
+	}
+	
+	/**
+	 * This method is use to search node in BST
+	 * @param key
+	 * @return
+	 */
+	public MyBinaryNode<K> search(K key) {
+		return searchRecursive(root, key);
+	}
+
+	/**
+	 * Recursive method for searching purpose in BST
+	 * @param current
+	 * @param key
+	 * @return
+	 */
+	private MyBinaryNode<K> searchRecursive(MyBinaryNode<K> current, K key) {
+		if (current == null)    // root is not present
+		return null;
+		else if(current.key.compareTo(key) == 0)      // root is the key present
+			return current;
+		else if(current.key.compareTo(key) < 0)      // key is greater than the root node
+			return searchRecursive(current.right, key);
+		else
+			return searchRecursive(current.left, key);    // key is smaller than the root node 
 	}
 
 	/**
