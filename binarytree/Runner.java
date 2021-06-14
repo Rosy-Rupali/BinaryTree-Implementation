@@ -10,7 +10,11 @@ public class Runner {
 		BST.add(4);
 		BST.add(78);
 		BST.add(63);
+		BST.add(14);
+		BST.add(98);
+		BST.add(10);
 		BST.printNodes();
+		System.out.println("Size of the tree is: "+BST.getSize());
 
 	}
 

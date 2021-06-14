@@ -8,60 +8,84 @@
 package binarytree;
 
 public class MyBinaryTree<K extends Comparable<K>> {
-	
+
 	MyBinaryNode<K> root;
-	
+
 	/**
 	 * This method is use add the node to the tree
-	 * @param key 
+	 * 
+	 * @param key
 	 */
 	public void add(K key) {
 		this.root = addRecursively(root, key);
 	}
 
 	/**
+	 * This method is to find out size of BST(In reference of height of tree)
+	 * @return
+	 */
+	public int getSize() {
+		return this.getSizeRecursive(root);
+	}
+
+	/**
+	 * Recursive function
+	 * @param current
+	 * @return
+	 */
+	private int getSizeRecursive(MyBinaryNode<K> current) {
+		if (current == null) {
+			return 0;
+		} else {
+			return 1 + getSizeRecursive(current.left) + getSizeRecursive(current.right);
+		}
+	}
+
+	/**
 	 * Recursive function to add node to BST
-	 * @param current 
-	 * @param key 
+	 * 
+	 * @param current
+	 * @param key
 	 * @return
 	 */
 	private MyBinaryNode<K> addRecursively(MyBinaryNode<K> current, K key) {
-			if(current == null) {
-				return new MyBinaryNode<>(key);
-			}
-			int compareResult = key.compareTo(current.key);
-			if(compareResult == 0) {
-				return current;
-			}else if(compareResult < 0) {
-				current.left = addRecursively(current.left, key);
-			}else {
-				current.right = addRecursively(current.right, key);
-			}
+		if (current == null) {
+			return new MyBinaryNode<>(key);
+		}
+		int compareResult = key.compareTo(current.key);
+		if (compareResult == 0) {
+			return current;
+		} else if (compareResult < 0) {
+			current.left = addRecursively(current.left, key);
+		} else {
+			current.right = addRecursively(current.right, key);
+		}
 		return current;
 	}
-	
-	
-	
+
 	/**
-	 *It displays the node
+	 * It displays the node
 	 */
-	public void printNodes(){
-			printNodes(root);
-		
+	public void printNodes() {
+		printNodes(root);
+
 	}
+
 	/**
-	 * Inorder traversal is performed if left node is visited first , then the root and at last right node is visited
+	 * Inorder traversal is performed if left node is visited first , then the root
+	 * and at last right node is visited
+	 * 
 	 * @param root
 	 */
 	private void printNodes(MyBinaryNode<K> root) {
 		if (root != null) {
-			if(root.left != null) 
-			printNodes(root.left);
+			if (root.left != null)
+				printNodes(root.left);
 			System.out.println(root.key);
-			if(root.right != null) 
-			printNodes(root.right);
-			
+			if (root.right != null)
+				printNodes(root.right);
+
 		}
 	}
-		
+
 }
