@@ -98,18 +98,15 @@ public class MyBinaryTree<K extends Comparable<K>> {
 	}
 
 	/**
-	 * Inorder traversal is performed if left node is visited first , then the root
-	 * and at last right node is visited
+	 * Inorder traversal is performed in left subtree, then the root is visited and last it traverse right subtree
 	 * 
 	 * @param root
 	 */
 	private void printNodes(MyBinaryNode<K> root) {
 		if (root != null) {
-			if (root.left != null)
-				printNodes(root.left);
-			System.out.println(root.key);
-			if (root.right != null)
-				printNodes(root.right);
+		printNodes(root.left);
+		System.out.println(root.key);
+		printNodes(root.right);
 
 		}
 	}
