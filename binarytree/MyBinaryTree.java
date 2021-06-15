@@ -1,7 +1,7 @@
 /**************************************************
  * Purpose : Binary search tree implementation
  * @author Rosy Rupali
- * @since 15-06-2021
+ * @since 14-06-2021
  * @version 1.0
  *
  *************************************************/
@@ -50,15 +50,13 @@ public class MyBinaryTree<K extends Comparable<K>> {
 		
 	}
 	/**
-	 * Inorder traversal is performed if left node is visited first , then the root and at last right node is visited
+	 * Inorder traversal is performed in left subtree, then the root is visited and last it traverse right subtree
 	 * @param root
 	 */
 	private void printNodes(MyBinaryNode<K> root) {
-		if (root != null) {
-			if(root.left != null) 
+		if (root != null) { 
 			printNodes(root.left);
-			System.out.println(root.key);
-			if(root.right != null) 
+			System.out.println(root.key); 
 			printNodes(root.right);
 			
 		}
