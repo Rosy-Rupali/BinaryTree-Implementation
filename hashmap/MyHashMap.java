@@ -18,7 +18,7 @@ public class MyHashMap<K, V> {
 
 	public MyHashMap() {
 		myBucketArray = new LinkedList<>();
-		numOfBuckets = 10;
+		numOfBuckets = 30;
 		size = 0;
 
 		for (int i = 0; i < numOfBuckets; i++) {
