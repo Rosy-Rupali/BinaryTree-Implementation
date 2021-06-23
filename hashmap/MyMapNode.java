@@ -16,5 +16,4 @@ public class MyMapNode<K, V> {
 		this.key = key;
 		this.value = value;
 	}
-
 }

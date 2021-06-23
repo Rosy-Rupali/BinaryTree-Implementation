@@ -75,6 +75,7 @@ public class MyHashMap<K, V> {
 
 	/**
 	 * This method is returning value of key
+	 * 
 	 * @param key : First argument of method
 	 * @return value for the key
 	 */
@@ -93,10 +94,10 @@ public class MyHashMap<K, V> {
 		return null;
 	}
 
-	
 	/**
 	 * function of adding key and value
-	 * @param key : first argument of method
+	 * 
+	 * @param key   : first argument of method
 	 * @param value : second argument of method
 	 */
 	public void add(K key, V value) {

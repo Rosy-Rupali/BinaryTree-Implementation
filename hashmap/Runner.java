@@ -1,5 +1,5 @@
 /**************************************************
- * Purpose : Ability to find frequency of words in a large paragraph phase
+ * Purpose : Removal of a word from the large paragraph phrase
  * @author Rosy Rupali
  * @since 14-06-2021
  * @version 1.0
@@ -18,6 +18,11 @@ public class Runner {
 			value = (value == null) ? Integer.valueOf(1) : value + 1;
 			hashMap.add(stringArray[i].toLowerCase(), value);
 		}
+		System.out.println("hash map before removal");
+		hashMap.show();
+		System.out.println();
+		hashMap.remove("avoidable");
+		System.out.println("hash map after removal");
 		hashMap.show();
 	}
 
